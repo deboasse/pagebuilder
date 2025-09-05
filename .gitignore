@@ -24,3 +24,6 @@ debug.log
 # Temporary files
 *.tmp
 *.temp
+
+# Documentation
+*.md
