@@ -154,7 +154,7 @@ Built strictly following the requirements in `/docs/plan.md`:
 
 ## Support
 
-For technical support or questions, contact thedevelopment team.
+For technical support or questions, contact the development team.
 
 ---
 
