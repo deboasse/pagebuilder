@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: DeAngele Hardscape Front-End Editor
- * Plugin URI: https://deangele.com
- * Description: Simple front-end editing for the DeAngele hardscape template. Edit text and images directly on the page without touching the WordPress dashboard.
+ * Plugin Name: Hardscape Front-End Editor
+ * Plugin URI: https://Company.com
+ * Description: Simple front-end editing for the Company hardscape template. Edit text and images directly on the page without touching the WordPress dashboard.
  * Version: 1.0.0
- * Author: DeAngele Team
+ * Author: Company Team
  * License: GPL v2 or later
- * Text Domain: deangele-hardscape-editor
+ * Text Domain: Company-hardscape-editor
  * Requires at least: 5.0
  * Tested up to: 6.4
  * Requires PHP: 7.4
@@ -25,7 +25,7 @@ define('DHE_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('DHE_PLUGIN_BASENAME', plugin_basename(__FILE__));
 
 /**
- * Main DeAngele Hardscape Editor Class
+ * Main Company Hardscape Editor Class
  * 
  * Phase 1: Core Plugin Structure
  * - Basic plugin initialization following WordPress best practices
@@ -33,7 +33,7 @@ define('DHE_PLUGIN_BASENAME', plugin_basename(__FILE__));
  * - Content storage and retrieval system
  * - Authentication and permission checks
  */
-class DeAngele_Hardscape_Editor {
+class Company_Hardscape_Editor {
 
     /**
      * Single instance of the plugin
@@ -74,7 +74,7 @@ class DeAngele_Hardscape_Editor {
      */
     public function init() {
         // Load text domain for translations
-        load_plugin_textdomain('deangele-hardscape-editor', false, dirname(DHE_PLUGIN_BASENAME) . '/languages');
+        load_plugin_textdomain('Company-hardscape-editor', false, dirname(DHE_PLUGIN_BASENAME) . '/languages');
         
         // Step 3: Check for version updates and force database refresh
         $this->check_version_update();
@@ -179,8 +179,8 @@ class DeAngele_Hardscape_Editor {
      * Add rewrite rules for custom page
      */
     private function add_rewrite_rules() {
-        add_rewrite_rule('^deangele-hardscape/?$', 'index.php?dhe_page=hardscape&dhe_variant=default', 'top');
-        add_rewrite_rule('^deangele-hardscape/([^/]+)/?$', 'index.php?dhe_page=hardscape&dhe_variant=$matches[1]', 'top');
+        add_rewrite_rule('^Company-hardscape/?$', 'index.php?dhe_page=hardscape&dhe_variant=default', 'top');
+        add_rewrite_rule('^Company-hardscape/([^/]+)/?$', 'index.php?dhe_page=hardscape&dhe_variant=$matches[1]', 'top');
     }
     
     /**
@@ -218,13 +218,13 @@ class DeAngele_Hardscape_Editor {
         // Default content structure based on hardscape-hingham.html analysis
         $default_content = array(
             'page_title' => 'Top Hardscape Materials for Patios, Fire Pits & Retaining Walls',
-            'meta_description' => 'Backyard transformations in Massachusetts. Outdoor kitchens, fire pits, retaining walls, and more by DeAngele Landscape. Book your consultation now.',
+            'meta_description' => 'Backyard transformations in Massachusetts. Outdoor kitchens, fire pits, retaining walls, and more by Company Landscape. Book your consultation now.',
             'hero_title' => 'Top Hardscape Materials for Patios, Fire Pits & Retaining Walls',
-            'hero_subtitle' => 'From outdoor kitchens to fire pits, retaining walls, and more — Explore premium materials like Concord Wall™, granite pavers, and natural gas fire pits — all professionally installed in Hingham MA, by DeAngele Landscape & Construction',
+            'hero_subtitle' => 'From outdoor kitchens to fire pits, retaining walls, and more — Explore premium materials like Concord Wall™, granite pavers, and natural gas fire pits — all professionally installed in Hingham MA, by Company Landscape & Construction',
             'hero_cta_text' => '📅 Get a Free Design Consultation',
-            'hero_bg_image' => 'https://deangele.com/wp-content/uploads/2025/06/hero-outdoor-transformation-hingham-ma-deangele-landscape.jpg',
+            'hero_bg_image' => 'https://Company.com/wp-content/uploads/2025/06/hero-outdoor-transformation-hingham-ma-Company-landscape.jpg',
             'sticky_cta_text' => '📞 Free Quote',
-            'logo_image' => 'https://deangele.com/wp-content/uploads/2024/03/DeAngele-Landscape-logo-2.webp',
+            'logo_image' => 'https://Company.com/wp-content/uploads/2024/03/Company-Landscape-logo-2.webp',
             'what_we_build_title' => 'What We Build',
             'what_we_build_cta' => '🛠️ Have a Project? Request a Call Back!',
             'materials_title' => 'Materials Matter',
@@ -239,8 +239,8 @@ class DeAngele_Hardscape_Editor {
             'google_reviews_shortcode' => '[your_reviews_shortcode]',
             'youtube_video_url' => 'https://www.youtube.com/watch?v=EXAMPLE',
             'youtube_video_title' => 'Customer Testimonial Video',
-            'youtube_video_description' => 'Watch our satisfied customer share their experience with DeAngele Landscape & Construction.',
-            'instagram_reviews_content' => 'Visit our Instagram <a href="https://instagram.com/deangelelandscape" target="_blank">@deangelelandscape</a> to see more customer reviews and project showcases!',
+            'youtube_video_description' => 'Watch our satisfied customer share their experience with Company Landscape & Construction.',
+            'instagram_reviews_content' => 'Visit our Instagram <a href="https://instagram.com/Companylandscape" target="_blank">@Companylandscape</a> to see more customer reviews and project showcases!',
             // Instagram Reels data - using embed method with custom thumbnails
             'instagram_reel1_url' => '',
             'instagram_reel1_title' => 'Bluestone Patio & Veneer Walls',
@@ -257,43 +257,43 @@ class DeAngele_Hardscape_Editor {
             // Feature cards
             'feature1_title' => 'Dream Backyard Patio',
             'feature1_description' => 'Backyard patio with white pergola, gazebo, and central fire pit creating the perfect entertaining space.',
-            'feature1_image' => 'https://deangele.com/wp-content/uploads/2025/06/hero-amazing-outdoor-kitchen-hingham-ma-deangele-landscape-2.jpg',
+            'feature1_image' => 'https://Company.com/wp-content/uploads/2025/06/hero-amazing-outdoor-kitchen-hingham-ma-Company-landscape-2.jpg',
             'feature2_title' => 'Full Outdoor Kitchen',
             'feature2_description' => 'Spacious covered outdoor kitchen with built-in gas grill, counter space, and storage solutions.',
-            'feature2_image' => 'https://deangele.com/wp-content/uploads/2025/06/detail-outdoor-kitchen-design-hingham-ma-deangele-landscape.jpg',
+            'feature2_image' => 'https://Company.com/wp-content/uploads/2025/06/detail-outdoor-kitchen-design-hingham-ma-Company-landscape.jpg',
             'feature3_title' => 'Round Stone Fire Pit',
             'feature3_description' => 'Round gray stone fire pit with white Adirondack chairs creating a cozy gathering space.',
-            'feature3_image' => 'https://deangele.com/wp-content/uploads/2025/06/detail-outdoor-firepit-installation-hingham-ma-deangele-landscape.jpg',
+            'feature3_image' => 'https://Company.com/wp-content/uploads/2025/06/detail-outdoor-firepit-installation-hingham-ma-Company-landscape.jpg',
             // Material cards (first 6 for now)
             'material1_title' => 'Concord Wall™ Segmental Retaining Wall',
             'material1_description' => 'Add structure and style with granite-toned segmental retaining walls.',
-            'material1_image' => 'https://deangele.com/wp-content/uploads/2025/06/Concord-Wall™-Segmental-Retaining-Wall-installation-by-deangele-landscape-and-construction-hingham.jpg',
+            'material1_image' => 'https://Company.com/wp-content/uploads/2025/06/Concord-Wall™-Segmental-Retaining-Wall-installation-by-Company-landscape-and-construction-hingham.jpg',
             'material2_title' => 'Granite Retaining Block Detail',
             'material2_description' => 'Engineered for support, slope control, and clean visual lines in backyard installations.',
-            'material2_image' => 'https://deangele.com/wp-content/uploads/2025/06/Granite-Retaining-Block-Detail-installation-by-deangele-landscape-and-construction-in-hingham.jpg',
+            'material2_image' => 'https://Company.com/wp-content/uploads/2025/06/Granite-Retaining-Block-Detail-installation-by-Company-landscape-and-construction-in-hingham.jpg',
             'material3_title' => 'CMU Block Framing',
             'material3_description' => 'Durable, load-bearing construction for long-lasting outdoor kitchens and fireplaces.',
-            'material3_image' => 'https://deangele.com/wp-content/uploads/2025/06/CMU-Block-Framing-by-deangele-landscape-installed-in-hingham-massachusetts.jpg',
+            'material3_image' => 'https://Company.com/wp-content/uploads/2025/06/CMU-Block-Framing-by-Company-landscape-installed-in-hingham-massachusetts.jpg',
             'material4_title' => 'Natural Gas Fire Pit',
             'material4_description' => 'Mess-free, stylish fire pit built from stone — perfect for year-round use.',
-            'material4_image' => 'https://deangele.com/wp-content/uploads/2025/06/Natural-Gas-Fire-Pit-installation-in-hingham-ma-by-deangele-landscape-top-landscape-company.jpg',
+            'material4_image' => 'https://Company.com/wp-content/uploads/2025/06/Natural-Gas-Fire-Pit-installation-in-hingham-ma-by-Company-landscape-top-landscape-company.jpg',
             'material5_title' => 'Fireplace with Veneer Mosaic',
             'material5_description' => 'Focal point for comfort and style, built with Desert Creek veneer and premium bluestone coping.',
-            'material5_image' => 'https://deangele.com/wp-content/uploads/2025/06/Stone-Fireplace-with-Bluestone-Cap-Installation-By-Hardscape-Pros-in-Hingham-DeAngele-Solutions-in-Outdoor-Design.jpg',
+            'material5_image' => 'https://Company.com/wp-content/uploads/2025/06/Stone-Fireplace-with-Bluestone-Cap-Installation-By-Hardscape-Pros-in-Hingham-Company-Solutions-in-Outdoor-Design.jpg',
             'material6_title' => 'Bluestone Coping & Capstone',
             'material6_description' => 'Polished, smooth finishing touches for steps, walls, and fire features.',
-            'material6_image' => 'https://deangele.com/wp-content/uploads/2025/06/Bluestone-Coping-Capstone-installation-outdoor-builders-in-Hingham-MA-Deangele-top-landscape-contractors.jpg',
+            'material6_image' => 'https://Company.com/wp-content/uploads/2025/06/Bluestone-Coping-Capstone-installation-outdoor-builders-in-Hingham-MA-Company-top-landscape-contractors.jpg',
             
             // NEW Third row hardscape materials - fresh database entries
             'hardscape_material1_title' => 'Natural Stone Veneer',
             'hardscape_material1_description' => 'Desert Creek stone veneer creates stunning focal points for outdoor fireplaces and accent walls.',
-            'hardscape_material1_image' => 'https://deangele.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
+            'hardscape_material1_image' => 'https://Company.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
             'hardscape_material2_title' => 'Granite Countertop Material', 
             'hardscape_material2_description' => 'Premium granite surfaces for outdoor kitchen islands and bar tops, engineered for weather resistance.',
-            'hardscape_material2_image' => 'https://deangele.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
+            'hardscape_material2_image' => 'https://Company.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
             'hardscape_material3_title' => 'Stacked Stone Base',
             'hardscape_material3_description' => 'Durable stacked stone construction for outdoor kitchen islands and structural elements.',
-            'hardscape_material3_image' => 'https://deangele.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
+            'hardscape_material3_image' => 'https://Company.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
         );
         
         // Load saved content from WordPress options - support page variants
@@ -317,13 +317,13 @@ class DeAngele_Hardscape_Editor {
         $hardscape_materials = array(
             'hardscape_material1_title' => 'Natural Stone Veneer',
             'hardscape_material1_description' => 'Desert Creek stone veneer creates stunning focal points for outdoor fireplaces and accent walls.',
-            'hardscape_material1_image' => 'https://deangele.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
+            'hardscape_material1_image' => 'https://Company.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
             'hardscape_material2_title' => 'Granite Countertop Material', 
             'hardscape_material2_description' => 'Premium granite surfaces for outdoor kitchen islands and bar tops, engineered for weather resistance.',
-            'hardscape_material2_image' => 'https://deangele.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
+            'hardscape_material2_image' => 'https://Company.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
             'hardscape_material3_title' => 'Stacked Stone Base',
             'hardscape_material3_description' => 'Durable stacked stone construction for outdoor kitchen islands and structural elements.',
-            'hardscape_material3_image' => 'https://deangele.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
+            'hardscape_material3_image' => 'https://Company.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
         );
         
         // Force populate hardscape materials on every load
@@ -396,7 +396,7 @@ class DeAngele_Hardscape_Editor {
                     'editing_mode' => true,
                     'plugin_url' => DHE_PLUGIN_URL,
                     'current_variant' => $this->current_page_variant,
-                    'current_url' => home_url('/deangele-hardscape' . ($this->current_page_variant !== 'default' ? '/' . $this->current_page_variant : ''))
+                    'current_url' => home_url('/Company-hardscape' . ($this->current_page_variant !== 'default' ? '/' . $this->current_page_variant : ''))
                 ));
                 
                 // Enqueue WordPress media library
@@ -750,7 +750,7 @@ class DeAngele_Hardscape_Editor {
         }
         
         // Create comprehensive style block
-        $style_block = "\n<!-- DeAngele Landing Page Styles -->\n";
+        $style_block = "\n<!-- Company Landing Page Styles -->\n";
         
         // Add viewport meta tag if not present
         if (strpos($html, 'viewport') === false) {
@@ -849,13 +849,13 @@ class DeAngele_Hardscape_Editor {
         $new_hardscape_materials = array(
             'hardscape_material1_title' => 'Natural Stone Veneer',
             'hardscape_material1_description' => 'Desert Creek stone veneer creates stunning focal points for outdoor fireplaces and accent walls.',
-            'hardscape_material1_image' => 'https://deangele.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
+            'hardscape_material1_image' => 'https://Company.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
             'hardscape_material2_title' => 'Granite Countertop Material', 
             'hardscape_material2_description' => 'Premium granite surfaces for outdoor kitchen islands and bar tops, engineered for weather resistance.',
-            'hardscape_material2_image' => 'https://deangele.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
+            'hardscape_material2_image' => 'https://Company.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
             'hardscape_material3_title' => 'Stacked Stone Base',
             'hardscape_material3_description' => 'Durable stacked stone construction for outdoor kitchen islands and structural elements.',
-            'hardscape_material3_image' => 'https://deangele.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
+            'hardscape_material3_image' => 'https://Company.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
         );
         
         // Remove old material7-9 entries if they exist
@@ -976,10 +976,10 @@ class DeAngele_Hardscape_Editor {
      */
     public function add_admin_menu() {
         add_options_page(
-            'DeAngele Hardscape Settings',
-            'DeAngele Hardscape',
+            'Company Hardscape Settings',
+            'Company Hardscape',
             'manage_options',
-            'deangele-hardscape-settings',
+            'Company-hardscape-settings',
             array($this, 'admin_page')
         );
     }
@@ -997,7 +997,7 @@ class DeAngele_Hardscape_Editor {
     public function admin_page() {
         ?>
         <div class="wrap">
-            <h1>DeAngele Hardscape Settings</h1>
+            <h1>Company Hardscape Settings</h1>
             
             
             <div class="notice notice-info">
@@ -1018,7 +1018,7 @@ class DeAngele_Hardscape_Editor {
         if (get_option('dhe_activated')) {
             ?>
             <div class="notice notice-success is-dismissible">
-                <p><strong>DeAngele Hardscape Editor:</strong> Plugin activated! Visit <a href="<?php echo home_url('/deangele-hardscape'); ?>" target="_blank"><?php echo home_url('/deangele-hardscape'); ?></a> to see your hardscape page.</p>
+                <p><strong>Company Hardscape Editor:</strong> Plugin activated! Visit <a href="<?php echo home_url('/Company-hardscape'); ?>" target="_blank"><?php echo home_url('/Company-hardscape'); ?></a> to see your hardscape page.</p>
             </div>
             <?php
             delete_option('dhe_activated');
@@ -1170,7 +1170,7 @@ class DeAngele_Hardscape_Editor {
         // Save as new page
         update_option($new_option_key, $content);
         
-        $new_url = home_url('/deangele-hardscape/' . $new_variant_name);
+        $new_url = home_url('/Company-hardscape/' . $new_variant_name);
         
         wp_send_json_success(array(
             'message' => 'Page duplicated successfully!',
@@ -1182,7 +1182,7 @@ class DeAngele_Hardscape_Editor {
 
 // Initialize the plugin
 function dhe_init() {
-    return DeAngele_Hardscape_Editor::get_instance();
+    return Company_Hardscape_Editor::get_instance();
 }
 
 // Start the plugin
@@ -1190,7 +1190,7 @@ dhe_init();
 
 // Helper function for templates with hardscape material fallbacks
 function dhe_get_content($key, $default = '') {
-    $instance = DeAngele_Hardscape_Editor::get_instance();
+    $instance = Company_Hardscape_Editor::get_instance();
     $content = $instance->get_content($key, $default);
     
     // Step 5: Fallback for hardscape materials if empty
@@ -1198,13 +1198,13 @@ function dhe_get_content($key, $default = '') {
         $fallbacks = array(
             'hardscape_material1_title' => 'Natural Stone Veneer',
             'hardscape_material1_description' => 'Desert Creek stone veneer creates stunning focal points for outdoor fireplaces and accent walls.',
-            'hardscape_material1_image' => 'https://deangele.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
+            'hardscape_material1_image' => 'https://Company.com/wp-content/uploads/2024/05/natural-stone-veneer-fireplace-hingham-ma.jpg',
             'hardscape_material2_title' => 'Granite Countertop Material',
             'hardscape_material2_description' => 'Premium granite surfaces for outdoor kitchen islands and bar tops, engineered for weather resistance.',
-            'hardscape_material2_image' => 'https://deangele.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
+            'hardscape_material2_image' => 'https://Company.com/wp-content/uploads/2024/05/granite-outdoor-kitchen-countertop-hingham.jpg',
             'hardscape_material3_title' => 'Stacked Stone Base',
             'hardscape_material3_description' => 'Durable stacked stone construction for outdoor kitchen islands and structural elements.',
-            'hardscape_material3_image' => 'https://deangele.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
+            'hardscape_material3_image' => 'https://Company.com/wp-content/uploads/2024/05/stacked-stone-outdoor-kitchen-base-hingham.jpg'
         );
         
         return $fallbacks[$key] ?? $default;
