@@ -1,4 +1,4 @@
-# DeAngele Hardscape Front-End Editor
+# Landing Page Front-End Editor
 
 **Version:** 1.0.0  
 **Requires:** WordPress 5.0+  
@@ -7,7 +7,7 @@
 
 ## Overview
 
-A simplified WordPress plugin for front-end editing of the DeAngele hardscape landing page template. Built following the detailed implementation plan in `/docs/plan.md`.
+A simplified WordPress plugin for front-end editing of the landing page template. Built following the detailed implementation plan in `/docs/plan.md`.
 
 ## Features ✅
 
@@ -24,11 +24,11 @@ A simplified WordPress plugin for front-end editing of the DeAngele hardscape la
 ### 1. Plugin Activation
 1. The plugin is already in the correct location
 2. Go to WordPress Admin → Plugins
-3. Find "DeAngele Hardscape Front-End Editor"
+3. Find "Hardscape Front-End Editor"
 4. Click **Activate**
 
 ### 2. Access Your Page
-- Visit: `pagebuilder.local/deangele-hardscape`
+- Visit: `pagebuilder.local/company-hardscape`
 - You'll see the hardscape template with all original styling
 
 ### 3. Start Editing (Logged-in Users Only)
@@ -75,8 +75,8 @@ Following the implementation plan, this plugin uses:
 
 ## File Structure
 ```
-deangele-page-builder/
-├── deangele-hardscape-editor.php    # Main plugin file
+company-page-builder/
+├── company-hardscape-editor.php    # Main plugin file
 ├── templates/
 │   └── hardscape-template.php       # HTML template with dynamic content
 ├── assets/
@@ -118,7 +118,7 @@ deangele-page-builder/
 ### "I don't see the editing toolbar"
 - Make sure you're logged into WordPress
 - Ensure your user has `edit_pages` capability
-- Visit: `pagebuilder.local/deangele-hardscape`
+- Visit: `pagebuilder.local/company-hardscape`
 
 ### "Images won't change"
 - Make sure your user has `upload_files` capability  
@@ -154,7 +154,7 @@ Built strictly following the requirements in `/docs/plan.md`:
 
 ## Support
 
-For technical support or questions, contact the DeAngele development team.
+For technical support or questions, contact thedevelopment team.
 
 ---
 
